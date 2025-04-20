@@ -27,3 +27,25 @@ Ensure you have the following Python dependencies installed:
 
 ```bash
 pip install langchain openai pandas
+```
+
+## Experimental Results
+
+### Comparison of Plain Attacker and Jailbreak Attacker
+
+In order to evaluate the performance of the **Plain Attacker** and **Jailbreak Attacker**, we conducted a series of experiments using a test dataset of 100 prompts. The results are summarized below.
+
+#### Plain Attacker:
+- **Attack Success Rate (ASR)**: 0.01
+- **Total Query Count (TQC)**: 496
+- **Explanation**: The **Plain Attacker** generates attack prompts based on predefined simple inputs. With a low success rate, it requires a high number of queries to produce a harmful response. The limited approach of using fixed prompts contributes to its inefficiency in bypassing the defense mechanisms.
+
+#### Jailbreak Attacker:
+- **Attack Success Rate (ASR)**: 1
+- **Total Query Count (TQC)**: 107
+- **Explanation**: The **Jailbreak Attacker** autonomously generates induced questions by leveraging harmful prompts and engaging the LLM in self-exploitation. This method achieves a 100% attack success rate and requires far fewer queries compared to the **Plain Attacker**, showing the efficiency of self-induced attacks in bypassing defenses.
+
+#### Summary:
+- The **Jailbreak Attacker** outperforms the **Plain Attacker** in both **Attack Success Rate (ASR)** and **Total Query Count (TQC)**, demonstrating its ability to autonomously generate effective attack prompts.
+- While the **Plain Attacker** struggles with predefined inputs, the **Jailbreak Attacker** uses the LLM's own capabilities to exploit vulnerabilities, resulting in a much higher success rate and fewer attempts needed for a successful attack.
+
