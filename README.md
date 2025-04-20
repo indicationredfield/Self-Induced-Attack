@@ -3,16 +3,16 @@ Self-Induced Attack: Autonomous Generation of Jailbreak Prompts for LLM Self-Exp
 
 ## Project Overview
 
-SIA (Self-Induced Attack) is an attack-defense framework designed for self-exploitation in large language models (LLMs). In this framework, the attacker leverages the LLM to autonomously generate induced prompts, causing the model to bypass its built-in safety mechanisms. The attacker no longer directly manipulates the model; instead, the model itself generates jailbreak prompts, enabling self-exploitation and revealing potential vulnerabilities.
+SIA (Self-Induced Attack) is a jailbreak attack framework designed for self-exploitation in large language models (LLMs). In this framework, the attack agent leverages the LLM to autonomously generate induced prompts, causing the victim defense agent to bypass its built-in safety mechanisms. The attacker no longer directly manipulates the model; instead, the model itself generates jailbreak prompts, enabling self-exploitation and revealing potential vulnerabilities.
 
-By simulating the induced attack process, SIA allows LLMs to autonomously construct harmful questions and generate malicious content without external intervention. This provides a new perspective for researching LLM security and defense mechanisms.
+By simulating the induced attack process, SIA allows LLMs to autonomously construct indirect harmful questions without external intervention. This provides a new perspective for researching LLM security and defense mechanisms.
 
 ## Features
 
-- **Plain Attacker**: Selects and generates simple attack inputs from a set of predefined prompts.
-- **Jailbreak Attacker**: Utilizes existing harmful prompts to autonomously generate induced questions via the LLM, bypassing safety measures and executing self-attacks.
+- **Plain Attacker**: Selects and generates simple attack inputs without revision from a set of predefined prompts.
+- **Jailbreak Attacker**: Utilizes existing harmful prompts to autonomously generate induced indirect questions via the LLM.
 - **Defender**: Blocks harmful prompts by ensuring safe responses based on security instructions.
-- **History Logging**: The Jailbreak Attacker records each generated induced prompt and its corresponding response to help the model optimize its attack strategies based on previous failures.
+- **History Logging**: The Jailbreak Attacker records failed indirect questions and corresponding responses for a specfic harmful prompt to help the model optimize its attack strategies based on previous failures.
 
 ## Project Structure
 
@@ -33,7 +33,7 @@ pip install langchain openai pandas
 
 ### Comparison of Plain Attacker and Jailbreak Attacker
 
-In order to evaluate the performance of the **Plain Attacker** and **Jailbreak Attacker**, we conducted a series of experiments using a test dataset of 100 prompts. The results are summarized below.
+In order to evaluate the performance of the **Plain Attacker** and **Jailbreak Attacker**, we conducted a series of experiments using a test dataset of 100 prompts(first 100 prompts from https://huggingface.co/datasets/mlabonne/harmful_behaviors/blob/main/data/test-00000-of-00001.parquet). The results are summarized below.
 
 #### Plain Attacker:
 - **Attack Success Rate (ASR)**: 0.01
