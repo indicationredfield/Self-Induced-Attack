@@ -51,7 +51,7 @@ prompt_num = 100
 success_num = 0
 tol = 5
 rec = []
-with open('result/query_rec_plain.txt', 'w') as f:
+with open('result/query_rec.txt', 'w') as f:
     for i in range(92, prompt_num):
         print(f"====== {i} ======")
         f.write(f"====== {i} ======\n")
