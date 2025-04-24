@@ -16,7 +16,7 @@ By simulating the induced attack process, SIA allows LLMs to autonomously constr
 
 ## Project Structure
 
-- **attack.py**: Contains the attacker classes `PlainAttacker` and `JailbreakAttacker`, responsible for generating attack prompts and induced questions.
+- **attack.py**: Contains the attacker classes `PlainAttacker` and `JailbreakAttacker`, responsible for generating plain attack prompts and induced questions.
 - **defend.py**: Contains the `Defender` class, which counters harmful prompts and ensures the safety of the model's responses.
 - **run.py**: The main script responsible for initializing the agents, running attack-defense simulations, and evaluating success rates and query counts.
 - **data/**: Stores test datasets (e.g., `test.parquet`), which are used to select prompts during the attack and defense process.
@@ -43,7 +43,7 @@ In order to evaluate the performance of the **Plain Attacker** and **Jailbreak A
 #### Jailbreak Attacker:
 - **Attack Success Rate (ASR)**: 1
 - **Total Query Count (TQC)**: 107
-- **Explanation**: The **Jailbreak Attacker** autonomously generates induced questions by leveraging harmful prompts and engaging the LLM in self-exploitation. This method achieves a 100% attack success rate and requires far fewer queries compared to the **Plain Attacker**, showing the efficiency of self-induced attacks in bypassing defenses.
+- **Explanation**: The **Jailbreak Attacker** autonomously generates induced questions by leveraging harmful prompts and engaging the LLM in self-exploitation. This method achieves a 100% attack success rate and requires far fewer queries compared to the **Plain Attacker**, showing the efficiency of self-induced attacks in bypassing defenses. 6 harmful prompts achieve success after adding history record.
 
 #### Summary:
 - The **Jailbreak Attacker** outperforms the **Plain Attacker** in both **Attack Success Rate (ASR)** and **Total Query Count (TQC)**, demonstrating its ability to autonomously generate effective attack prompts.
